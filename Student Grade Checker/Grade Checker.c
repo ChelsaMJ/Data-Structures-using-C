@@ -50,9 +50,9 @@ int main(){
     do{
         menu(&choice);
         if(choice == 1){
-            fp = fopen("students_Sample.dat","a");
+            fp = fopen("students.dat","a");
             if (fp == NULL){
-                printf("Can't open students_Sample.dat\n");
+                printf("Can't open students.dat\n");
                 exit(1);
             }
             else{
@@ -208,9 +208,9 @@ int BuildBST(BinTreePointer *Root){
     CreateBST(Root);
 
     size = 0;
-    fp = fopen("students_Sample.dat","r");
+    fp = fopen("students.dat","r");
     if (fp == NULL){
-        printf("Can't open students_Sample.dat\n");
+        printf("Can't open students.dat\n");
         exit(1);
     }
     else{
@@ -243,9 +243,9 @@ void PrintStudent(int RecNum){
 
     lines = 0;
 
-    infile = fopen("students_Sample.dat", "r");
+    infile = fopen("students.dat", "r");
     if (infile == NULL)
-        printf("Can't open students_Sample.dat\n");
+        printf("Can't open students.dat\n");
     else{
         while(lines <= RecNum){
             nscan = fscanf(infile,"%d, %20[^,], %20[^,], %c, %d, %g%c", &student.code, student.surname, student.name, &student.sex, &student.year, &student.grade, &termch);
@@ -278,9 +278,9 @@ void printStudentsWithGrade(){
         scanf("%g", &theGrade);
     }
 
-    infile = fopen("students_Sample.dat", "r");
+    infile = fopen("students.dat", "r");
     if (infile == NULL)
-        printf("Can't open students_Sample.dat\n");
+        printf("Can't open students.dat\n");
     else{
         while(TRUE){
             nscan = fscanf(infile,"%d, %20[^,], %20[^,], %c, %d, %g%c", &student.code, student.surname, student.name, &student.sex, &student.year, &student.grade, &termch);
